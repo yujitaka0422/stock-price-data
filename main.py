@@ -18,7 +18,7 @@ else:
 
 # CSVファイルの読み込み
 try:
-    df2 = load_data('味の素(2802)データ縮小版.csv')  # CSVファイル名を指定して関数を呼び出し
+    df2 = load_data('味の素(2802)データ縮小版1.csv')  # CSVファイル名を指定して関数を呼び出し
 except FileNotFoundError as e:
     raise FileNotFoundError(f"Data file not found: {e}")
 
