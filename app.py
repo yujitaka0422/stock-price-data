@@ -15,7 +15,7 @@ payload = {
 }
 
 # FastAPIサーバーにPOSTリクエストを送信
-url = 'http://127.0.0.1:8000/predict'  # URLの末尾に '/predict' を追加
+url = 'https://stock-prediction-nk5l.onrender.com/predict'  # URLの末尾に '/predict' を追加
 
 
 try:
@@ -49,5 +49,6 @@ try:
         # レスポンスが成功しなかった場合、エラーメッセージを表示
         error_message = response.json().get('detail', '株式相場はお休みです。')
         st.error(error_message)
+
 except requests.exceptions.ConnectionError:
     st.error("FastAPIサーバーに接続できません。サーバーが起動していることを確認してください。")
