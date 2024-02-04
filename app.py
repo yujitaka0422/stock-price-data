@@ -15,7 +15,7 @@ payload = {
 }
 
 # FastAPIサーバーにPOSTリクエストを送信
-url = 'https://stock-prediction-nk5l.onrender.com/predict'  # URLの末尾に '/predict' を追加
+url = 'https://stock-data-kg5k.onrender.com/predict'  # URLの末尾に '/predict' を追加
 
 
 try:

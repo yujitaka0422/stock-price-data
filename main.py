@@ -12,7 +12,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # すべてのドメインからのアクセスを許可
+    allow_origins=["https://stock-data-kg5k.onrender.com"],  # すべてのドメインからのアクセスを許可
     allow_credentials=True,
     allow_methods=["*"],  # すべてのHTTPメソッドを許可
     allow_headers=["*"],  # すべてのHTTPヘッダーを許可
