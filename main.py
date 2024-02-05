@@ -12,7 +12,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://stock-data-kg5k.onrender.com"],  # すべてのドメインからのアクセスを許可
+    allow_origins=["*"],  # すべてのドメインからのアクセスを許可
     allow_credentials=True,
     allow_methods=["*"],  # すべてのHTTPメソッドを許可
     allow_headers=["*"],  # すべてのHTTPヘッダーを許可
@@ -30,7 +30,7 @@ else:
 
 # CSVファイルの読み込み
 try:
-    df2 = load_data('味の素(2802)データ縮小版1.csv')  # CSVファイル名を指定して関数を呼び出し
+    df2 = load_data('味の素(2802)5年.csv')  # CSVファイル名を指定して関数を呼び出し
 except FileNotFoundError as e:
     raise FileNotFoundError(f"Data file not found: {e}")
 
@@ -57,7 +57,7 @@ async def predict_stock(request: PredictionRequest):
     if isinstance(predicted_price, (np.integer, np.floating)):
         predicted_price = int(predicted_price.item())
 
-    features = ['売上高営業利益率', '営業利益成長率', '売上高成長率',  '為替レート']
+    features = ['売上高営業利益率', '営業利益成長率', '売上高成長率', '投下資本利益率', '為替レート']
     feature_values = {}
     for feature in features:
         value = selected_data[feature].values[0] if feature in selected_data else None

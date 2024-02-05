@@ -15,7 +15,7 @@ payload = {
 }
 
 # FastAPIサーバーにPOSTリクエストを送信
-url = 'https://stock-data-kg5k.onrender.com/predict'  # URLの末尾に '/predict' を追加
+url = 'http://127.0.0.1:8000/predict'  # URLの末尾に '/predict' を追加
 
 
 try:
@@ -36,7 +36,8 @@ try:
         feature1_value = response_data.get('売上高営業利益率')
         feature2_value = response_data.get('営業利益成長率')
         feature3_value = response_data.get('売上高成長率')
-        feature4_value = response_data.get('為替レート')
+        feature4_value = response_data.get('投下資本利益率')
+        feature5_value = response_data.get('為替レート')
 
         # 予測された株価と特徴量を表示
         if predicted_price is not None:
