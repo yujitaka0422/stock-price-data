@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
 # データの読み込み
-df = load_data('味の素(2802)5年.csv')
+df = load_data('味の素(2802)3年.csv')
 import datetime as dt
 df['Date']=pd.to_datetime(df['Date'])
 df1=df[df['Date']<=dt.datetime(2024,1,17)]
